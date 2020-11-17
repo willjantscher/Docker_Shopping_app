@@ -47,7 +47,16 @@ handleInputChange = (e) => {
 }
 
 handleAddItem = (e) => {
-
+  e.preventDefault();
+  let tempList = this.state.list;
+  tempList.push(
+    {
+      name: this.state.tempItem[0],
+      qty: this.state.tempItem[1],
+      unit: this.state.tempItem[2]
+    }
+  )
+  this.setState({list: tempList})
 }
 
 
